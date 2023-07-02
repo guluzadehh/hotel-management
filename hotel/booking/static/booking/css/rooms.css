@@ -1,0 +1,17 @@
+.sort,
+.filter {
+    border: 1px solid grey;
+    font-size: 0.8em;
+}
+
+.sort-item {
+    display: block;
+}
+
+.room-item {
+    border: 1px solid grey;
+}
+
+.room-item button {
+    font-size: 0.8em;
+}

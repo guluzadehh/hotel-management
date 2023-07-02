@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'css' %}
+<link rel="stylesheet" href="{% static 'booking/css/reservations.css' %}">
+{% endblock %}
+
+{% block 'content' %}
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div class="toast hide align-items-center text-white bg-success" role="alert" aria-live="assertive"
+        aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">
+                Резервация отменена.
+            </div>
+            <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+
+<h3>Резервации</h3>
+
+{% if not request.user.is_staff %}
+<div id="reservation-list"></div>
+{% else %}
+<div class="row">
+    <div class="col-9">
+        <div id="reservation-list"></div>
+    </div>
+    <div class="col-3">
+        <div class="filter my-1 p-2">
+            <h5>Фильтр</h5>
+            <div class="mt-1">
+                <input type="radio" name="all" value="true" />
+                <label for="all">Все</label>
+            </div>
+            <div class="mt-1">
+                <input type="radio" name="all" value="false" />
+                <label for="all">Мои</label>
+            </div>
+            <button class="btn btn-primary mt-3" type="button" id="filter-btn">Поиск</button>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}
+
+{% block 'script' %}
+<script type="text/javascript" src="{% static 'booking/js/reservations.js' %}"></script>
+{% endblock %}
