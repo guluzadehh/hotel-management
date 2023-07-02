@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "account",
     "booking",
+    'coreapi',  # Coreapi for coreapi documentation
     'drf_yasg',  # drf_yasg fro Swagger documentation
 ]
 
